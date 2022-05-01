@@ -6,7 +6,7 @@ using namespace aws::lambda_runtime;
 
 
 static invocation_response my_handler(invocation_request const& req) {
-    std::cout << "Function invoked. req: " << req.payload;
+    std::cout << "Function invoked. req: " << req.payload << std::endl;
 
     return invocation_response::success("{\"OK\": true}", "application/json");
 }
@@ -14,7 +14,7 @@ static invocation_response my_handler(invocation_request const& req) {
 
 
 int main() {
-    std::cout << "Starting Lambda";
+    std::cout << "Starting Lambda" << std::endl;
 
     run_handler(my_handler);
 
