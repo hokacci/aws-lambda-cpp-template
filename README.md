@@ -20,7 +20,7 @@ I hope this would help you setup development environment.
 
 - make: as a task runner.
 - docker: for a reproducible development environment.
-- aws cli: for simple deploy and test. (It is better to integrate this to your IaC project. In that case, you don't necessarily require aws cli.)
+- aws cli: for simple deploy and test. (It is better to integrate this project to your IaC project. In that case, you don't necessarily require aws cli.)
 
 ## The first thing you have to do; Change the project name.
 
