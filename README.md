@@ -97,12 +97,15 @@ The log will be written to `deploy.log`. Check it.
 
 ## Edit the source code with VSCode
 
+There's no reason to force developers to work in VSCode.  
+The following commands are one of many choices and just for an example.
+
 Run the following command, then the container for development will start.  
 ```
 make devenv-init
 ```
 
-In VSCode, go to Remote Explorer -> containers -> Attach aws-lambda-cpp-[project name]-devenv -> Open `/workspace`.  
+In VSCode, go to Remote Explorer -> containers -> Attach [project name]-devenv -> Open `/workspace`.  
 You can install C++ extensions in the container.
 
 When you want to stop the container for development,
