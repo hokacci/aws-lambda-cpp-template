@@ -26,11 +26,11 @@ C++でLambda関数を書くことで、効率的に計算を行いたいとき�
 以下の2箇所で設定する。
 
 ```
-makefile:3 PROJECT_NAME = project
+makefile:3 PROJECT_NAME = example-project
 ```
 
 ```
-CMakeLists.txt:4 project(project LANGUAGES CXX)
+CMakeLists.txt:4 project(example-project LANGUAGES CXX)
 ```
 
 ## セットアップする

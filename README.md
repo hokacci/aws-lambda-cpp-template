@@ -27,11 +27,11 @@ I hope this would help you setup development environment.
 Edit the two lines below.
 
 ```
-makefile:3 PROJECT_NAME = project
+makefile:3 PROJECT_NAME = example-project
 ```
 
 ```
-CMakeLists.txt:4 project(project LANGUAGES CXX)
+CMakeLists.txt:4 project(example-project LANGUAGES CXX)
 ```
 
 ## Setup build environment
