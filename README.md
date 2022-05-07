@@ -8,7 +8,7 @@ You might want to write AWS lambda functions with C++ language.
 C++ will help you write code that runs with good performance.  
 However, it is less common to use C++ for AWS lambda than Python, node or other script languages and it is somehow hard to setup development environment.  
 This is a template project for AWS lambda with C++.  
-I hope this would help you setup development environment.
+I hope this would help you setup your nice development environment.
 
 ## Spirit
 
