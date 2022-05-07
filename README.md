@@ -76,12 +76,12 @@ make test-lambda
 
 ## Edit the source code
 
-Edit the code in `src/` and reflect the file addition/deletion in `CMakeListst.txt`.  
+Edit the code in `src/` and reflect the file addition/deletion in `CMakeLists.txt`.  
 It is your choice whether to use glob or not.
 
 ## Add libraries
 
-Edit `docker/Dockerfile` to install libraries to the build environment, and edit `CMakeListst.txt` to use them.
+Edit `docker/Dockerfile` to install libraries to the build environment, and edit `CMakeLists.txt` to use them.
 
 Do not forget run `make setup` again when you edit Dockerfile.
 

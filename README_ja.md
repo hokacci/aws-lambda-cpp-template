@@ -79,7 +79,7 @@ make test-lambda
 
 ## ライブラリを追加
 
-`docker/Dockerfile`を編集してビルド環境にインストールし、`CMakeListst.txt`を編集すればOK。
+`docker/Dockerfile`を編集してビルド環境にインストールし、`CMakeLists.txt`を編集すればOK。
 
 Dockerfileを編集した場合は、`make setup`を再度行うことを忘れずに。
 
