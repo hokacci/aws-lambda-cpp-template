@@ -94,6 +94,14 @@ make deploy-update
 
 The log will be written to `deploy.log`. Check it.
 
+## Remove deployed resources
+
+```
+make deploy-remove
+```
+
+This removes the deployed IAM policy, role and the Lambda function.
+
 
 ## Edit the source code with VSCode
 

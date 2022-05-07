@@ -92,6 +92,13 @@ make deploy-update
 
 ログは`deploy.log`に追記される。要チェック。
 
+## デプロイされたリソースを削除する
+
+```
+make deploy-remove
+```
+
+デプロイされたIAMポリシー・IAMロール・Lambda関数を削除する。
 
 ## VSCodeの補完機能を使いながら開発する
 
