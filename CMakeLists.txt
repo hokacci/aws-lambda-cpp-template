@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.6)
 set(CMAKE_CXX_STANDARD 17)
 
-project(project LANGUAGES CXX)
+project(example-project LANGUAGES CXX)
 
 find_package(aws-lambda-runtime)
 # find_package(AWSSDK COMPONENTS logs)

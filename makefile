@@ -1,13 +1,13 @@
 .PHONY: setup build build-in-container build-local clean deploy-init deploy-update test-lambda devenv-init devenv-up devenv-down devenv-remove
 
-PROJECT_NAME = project
-IMAGE_NAME = aws-lambda-cpp-${PROJECT_NAME}
-DEVENV_CONTAINER_NAME = aws-lambda-cpp-${PROJECT_NAME}-devenv
+PROJECT_NAME = example-project
+IMAGE_NAME = ${PROJECT_NAME}-image
+DEVENV_CONTAINER_NAME = ${PROJECT_NAME}-devenv
 TASK_NAME = aws-lambda-package-${PROJECT_NAME}
 ZIP_FILE_PATH = build/${PROJECT_NAME}.zip
-LAMBDA_FUNCTION_NAME = aws-lambda-cpp-${PROJECT_NAME}-function
-LAMBDA_FUNCTION_EXECUTION_POLICY = aws-lambda-cpp-${PROJECT_NAME}-policy
-LAMBDA_FUNCTION_EXECUTION_ROLE = aws-lambda-cpp-${PROJECT_NAME}-role
+LAMBDA_FUNCTION_NAME = ${PROJECT_NAME}-function
+LAMBDA_FUNCTION_EXECUTION_POLICY = ${PROJECT_NAME}-policy
+LAMBDA_FUNCTION_EXECUTION_ROLE = ${PROJECT_NAME}-role
 LAMBDA_FUNCTION_REGION = ap-northeast-1
 LAMBDA_FUNCTION_MEMORY_SIZE = 128 
 
