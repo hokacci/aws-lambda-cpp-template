@@ -1,4 +1,4 @@
-.PHONY: setup build build-in-container build-local clean deploy-init deploy-update test-lambda devenv-init devenv-up devenv-down devenv-remove
+.PHONY: setup build build-in-container build-local clean deploy-init deploy-update deploy-remove test-lambda devenv-init devenv-up devenv-down devenv-remove
 
 PROJECT_NAME = example-project
 IMAGE_NAME = ${PROJECT_NAME}-image
@@ -58,7 +58,7 @@ clean:
 	rm -r build
 
 deploy-init:
-	aws iam create-policy --policy-name ${LAMBDA_FUNCTION_EXECUTION_POLICY} --policy-document file://deploy/policy.json > deploy.log
+	aws iam create-policy --policy-name ${LAMBDA_FUNCTION_EXECUTION_POLICY} --policy-document file://deploy/policy.json >> deploy.log
 	aws iam create-role --role-name ${LAMBDA_FUNCTION_EXECUTION_ROLE} --assume-role-policy-document file://deploy/role.json >> deploy.log
 	aws iam attach-role-policy --role-name ${LAMBDA_FUNCTION_EXECUTION_ROLE} --policy-arn arn:aws:iam::$(shell aws sts get-caller-identity --query 'Account' | tr -d '"'):policy/${LAMBDA_FUNCTION_EXECUTION_POLICY} >> deploy.log
 	sleep 10
@@ -77,6 +77,14 @@ deploy-update:
 		--function-name ${LAMBDA_FUNCTION_NAME} \
 		--zip-file fileb://${ZIP_FILE_PATH} \
 		>> deploy.log
+
+deploy-remove:
+	aws lambda delete-function \
+		--function-name ${LAMBDA_FUNCTION_NAME} \
+		>> deploy.log
+	aws iam detach-role-policy --role-name ${LAMBDA_FUNCTION_EXECUTION_ROLE} --policy-arn arn:aws:iam::$(shell aws sts get-caller-identity --query 'Account' | tr -d '"'):policy/${LAMBDA_FUNCTION_EXECUTION_POLICY} >> deploy.log
+	aws iam delete-role --role-name ${LAMBDA_FUNCTION_EXECUTION_ROLE} >> deploy.log
+	aws iam delete-policy --policy-arn arn:aws:iam::$(shell aws sts get-caller-identity --query 'Account' | tr -d '"'):policy/${LAMBDA_FUNCTION_EXECUTION_POLICY} >> deploy.log
 
 test-lambda:
 	aws lambda invoke \
